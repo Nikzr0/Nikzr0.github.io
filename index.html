@@ -13,11 +13,99 @@
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- MDB CSS (Material Design for Bootstrap) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-villa-agency.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+
+    <style>
+     /* === CAROUSEL IMAGE STYLING (Unclicked State) === */
+#multiItemCarousel .carousel-item img {
+  width: 100%;
+  height: 400px;              /* Fixed height for consistent carousel display */
+  object-fit: cover;          /* Crops the image to fill the container */
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect (optional) */
+#multiItemCarousel .carousel-item img:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive adjustments for carousel images */
+@media (max-width: 768px) {
+  #multiItemCarousel .carousel-item img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  #multiItemCarousel .carousel-item img {
+    height: 200px;
+  }
+}
+
+/* === GALLERY IMAGE STYLING (if used separately) === */
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.clickable-image {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.clickable-image:hover {
+  transform: scale(1.05);
+}
+
+/* === FULLSCREEN LIGHTBOX STYLING (Clicked State) === */
+#fullscreen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#fullscreen-container.hidden {
+  display: none;
+}
+
+#fullscreen-image {
+  /* No fixed height/width so the image keeps its natural aspect ratio */
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+    </style>
   </head>
 
 <body>
@@ -153,6 +241,99 @@
       </div>
     </div>
   </div>
+
+<!-- Wrap carousel in a container to add horizontal space -->
+<div class="container my-5">
+  <div id="multiItemCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="row g-4">
+          <div class="col-4">
+            <img src="assets/images/villa/villa_kitchen_img1.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+          <div class="col-4">
+            <img src="assets/images/villa/villa_kitchen_img2.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+          <div class="col-4">
+            <img src="assets/images/villa/villa_kitchen_img3.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="row g-4">
+          <div class="col-4">
+            <img src="assets/images/villa/villa_living_room_img1.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+          <div class="col-4">
+            <img src="assets/images/villa/villa_living_room_img3.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+          <div class="col-4">
+            <img src="assets/images/villa/villa_living_room_img4.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="row g-4">
+          <div class="col-4">
+            <img src="assets/images/villa/villa_hall_room_img1.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+          <div class="col-4">
+            <img src="assets/images/villa/villa_hall_room_img2.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+          <div class="col-4">
+            <img src="assets/images/villa/villa_hall_room_img3.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="carousel-item">
+        <div class="row g-4">
+          <div class="col-4">
+            <img src="assets/images/villa/villa_guestroom_img1.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+          <div class="col-4">
+            <img src="assets/images/villa/villa_guestroom_img4.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+          <div class="col-4">
+            <img src="assets/images/villa/villa_bathroom_img2.jpg" class="img-fluid clickable-image" alt="Featured Image">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#multiItemCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#multiItemCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+<!-- Full-Screen Lightbox Container -->
+<div id="fullscreen-container" class="hidden">
+  <img id="fullscreen-image" src="" alt="Full View">
+</div>
+
+
+
+
+  
+
+
+
+
+
 
   <div class="video section">
     <div class="container">
@@ -345,6 +526,30 @@
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
+
+
+  <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".clickable-image");
+    const fullscreenContainer = document.getElementById("fullscreen-container");
+    const fullscreenImage = document.getElementById("fullscreen-image");
+
+    images.forEach(image => {
+        image.addEventListener("click", function () {
+            fullscreenImage.src = this.src;
+            fullscreenContainer.classList.remove("hidden");
+        });
+    });
+
+    fullscreenContainer.addEventListener("click", function () {
+        fullscreenContainer.classList.add("hidden");
+    });
+});
+
+  </script>
+
+  s
 
   </body>
 </html>
