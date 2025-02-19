@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -27,88 +25,137 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
     <style>
-     /* === CAROUSEL IMAGE STYLING (Unclicked State) === */
-#multiItemCarousel .carousel-item img {
-  width: 100%;
-  height: 400px;              /* Fixed height for consistent carousel display */
-  object-fit: cover;          /* Crops the image to fill the container */
-  border-radius: 10px;
-  border: 2px solid #ddd;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-/* Hover effect (optional) */
-#multiItemCarousel .carousel-item img:hover {
-  transform: scale(1.02);
-}
-
-/* Responsive adjustments for carousel images */
-@media (max-width: 768px) {
-  #multiItemCarousel .carousel-item img {
-    height: 250px;
-  }
-}
-
-@media (max-width: 576px) {
-  #multiItemCarousel .carousel-item img {
-    height: 200px;
-  }
-}
-
-/* === GALLERY IMAGE STYLING (if used separately) === */
-.image-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.clickable-image {
-  width: 250px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-}
-
-.clickable-image:hover {
-  transform: scale(1.05);
-}
-
-/* === FULLSCREEN LIGHTBOX STYLING (Clicked State) === */
-#fullscreen-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  transition: opacity 0.3s ease-in-out;
-}
-
-#fullscreen-container.hidden {
-  display: none;
-}
-
-#fullscreen-image {
-  /* No fixed height/width so the image keeps its natural aspect ratio */
-  width: auto;
-  height: auto;
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s ease-in-out;
-}
-
+      /* === CAROUSEL IMAGE STYLING (Unclicked State) === */
+      #multiItemCarousel .carousel-item img {
+        width: 100%;
+        height: 400px;              /* Fixed height for consistent carousel display */
+        object-fit: cover;          /* Crops the image to fill the container */
+        border-radius: 10px;
+        border: 2px solid #ddd;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+    
+      /* Hover effect (optional) */
+      #multiItemCarousel .carousel-item img:hover {
+        transform: scale(1.02);
+      }
+    
+      /* Responsive adjustments for carousel images */
+      @media (max-width: 768px) {
+        #multiItemCarousel .carousel-item img {
+          height: 250px;
+        }
+      }
+    
+      @media (max-width: 576px) {
+        #multiItemCarousel .carousel-item img {
+          height: 200px;
+        }
+      }
+    
+      /* === GALLERY IMAGE STYLING (if used separately) === */
+      .image-gallery {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+    
+      .clickable-image {
+        width: 250px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+    
+      .clickable-image:hover {
+        transform: scale(1.05);
+      }
+    
+      /* === FULLSCREEN LIGHTBOX STYLING (Clicked State) === */
+      #fullscreen-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transition: opacity 0.3s ease-in-out;
+      }
+    
+      #fullscreen-container.hidden {
+        display: none;
+      }
+    
+      #fullscreen-image {
+        /* No fixed height/width so the image keeps its natural aspect ratio */
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        transition: transform 0.3s ease-in-out;
+      }
+    
+      /* === RESPONSIVE TEXT STYLING === */
+      .main-banner .owl-carousel .item .header-text h2 {
+        font-size: 3rem;  /* Default size */
+        line-height: 1.2;
+      }
+    
+      .main-banner .owl-carousel .item .header-text .category {
+        font-size: 1.5rem;  /* Default size */
+        line-height: 1.2;
+      }
+    
+      /* Adjusting text size for smaller screens */
+      @media (max-width: 1024px) {
+        .main-banner .owl-carousel .item .header-text h2 {
+          font-size: 2.5rem;  /* Slightly smaller text */
+        }
+    
+        .main-banner .owl-carousel .item .header-text .category {
+          font-size: 1.2rem;  /* Slightly smaller category text */
+        }
+      }
+    
+      @media (max-width: 768px) {
+        .main-banner .owl-carousel .item .header-text h2 {
+          font-size: 2rem;  /* Even smaller text on smaller devices */
+        }
+    
+        .main-banner .owl-carousel .item .header-text .category {
+          font-size: 1rem;  /* Smaller category text */
+        }
+      }
+    
+      @media (max-width: 576px) {
+        .main-banner .owl-carousel .item .header-text h2 {
+          font-size: 1.6rem;  /* Reduced text size for mobile */
+        }
+    
+        .main-banner .owl-carousel .item .header-text .category {
+          font-size: 0.9rem;  /* Reduced category text */
+        }
+      }
     </style>
-  </head>
 
+    <script>
+      const publicKey = "{{EMAILJS_PUBLIC_KEY}}";
+
+      (function(){
+          emailjs.init(publicKey);
+      })();
+    </script>
+
+  </head>
 <body>
 
   <div id="js-preloader" class="js-preloader">
@@ -324,14 +371,6 @@
 <div id="fullscreen-container" class="hidden">
   <img id="fullscreen-image" src="" alt="Full View">
 </div>
-
-  
-
-
-
-
-
-
   <div class="video section">
     <div class="container">
       <div class="row">
@@ -410,24 +449,22 @@
     </div>
   </div>
 
-  
   <div class="contact-content">
     <section id="contact-us"></section>
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
           <div id="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46273.221254858014!2d24.5682541416378!3d42.6827583335001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a98f28dce501d9%3A0x7f6475431cdd9ba!2z0KXRgNCw0Lwg4oCe0KHQstC10YLQuCDQotC-0LTQvtGA4oCc!5e1!3m2!1sen!2sbg!4v1739370687760!5m2!1sen!2sbg"
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d45664.62372140716!2d24.60559471924244!3d42.68262187391762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDLCsDQxJzAxLjUiTiAyNMKwMzUnMDkuMCJF!5e1!3m2!1sen!2sbg!4v1739886306239!5m2!1sen!2sbg"
              width="100%" height="500px" frameborder="0" style="border:0; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);" allowfullscreen=""></iframe>
           </div>
-
 
           <div class="row">
             <div class="col-lg-6">
               <div class="item phone">
                 <img src="assets/images/phone-icon.png" alt="" style="max-width: 52px;">
                 <h7 style="font-weight: bold; color: #333;">
-                    089-539-2019<br>
+                    089-743-1150<br>
                     <span style="font-weight: normal; color: #666;">Phone Number</span>
                 </h7>
             </div>
@@ -527,8 +564,10 @@
 
 
   <script>
+    const serviceID = "{{EMAILJS_SERVICE_ID}}";
+    const templateID = "{{EMAILJS_TEMPLATE_ID}}";
 
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(".clickable-image");
     const fullscreenContainer = document.getElementById("fullscreen-container");
     const fullscreenImage = document.getElementById("fullscreen-image");
@@ -545,26 +584,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-(function() {
-  emailjs.init('YOUR_USER_ID');
-})();
-
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault(); 
-  var formData = new FormData(this);
-
-
-  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-    .then(function(response) {
-      alert('Message sent successfully!');
-      document.getElementById('contact-form').reset();
-    }, function(error) {
-      alert('Failed to send message. Please try again later.');
-    });
-});
-
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const serviceID = serviceID;
+        const templateID = templateID ;
+        
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(response => {
+                document.getElementById("response-message").textContent = "Message sent successfully!";
+                document.getElementById("contact-form").reset();
+            }, error => {
+                document.getElementById("response-message").textContent = "Failed to send message. Try again later.";
+            });
+        });
   </script>
   </body>
 </html>

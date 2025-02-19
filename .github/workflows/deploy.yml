@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Inject EmailJS secrets
+        run: |
+          echo "EMAILJS_SERVICE_ID=${{ secrets.EMAILJS_SERVICE_ID }}" >> $GITHUB_ENV
+          echo "EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }}" >> $GITHUB_ENV
+          echo "EMAILJS_PUBLIC_KEY=${{ secrets.EMAILJS_PUBLIC_KEY }}" >> $GITHUB_ENV
+          
+      - name: Replace secrets in HTML file
+        run: |
+          sed -i 's/{{EMAILJS_PUBLIC_KEY}}/${{ secrets.EMAILJS_PUBLIC_KEY }}/g' index.html
+          sed -i 's/{{EMAILJS_SERVICE_ID}}/${{ secrets.EMAILJS_SERVICE_ID }}/g' index.html
+          sed -i 's/{{EMAILJS_TEMPLATE_ID}}/${{ secrets.EMAILJS_TEMPLATE_ID }}/g' index.html
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: main
+          folder: .
