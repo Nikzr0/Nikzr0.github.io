@@ -22,8 +22,6 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
     <style>
       /* === CAROUSEL IMAGE STYLING (Unclicked State) === */
       #multiItemCarousel .carousel-item img {
@@ -147,13 +145,15 @@
       }
     </style>
 
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="assets/js/config.js"></script>
     <script>
-      const publicKey = "{{EMAILJS_PUBLIC_KEY}}";
-
       (function(){
-          emailjs.init(publicKey);
+          emailjs.init(EMAILJS_PUBLIC_KEY);
       })();
     </script>
+    
+    
 
   </head>
 <body>
@@ -563,41 +563,37 @@
   <script src="assets/js/custom.js"></script>
 
 
+  <script src="assets/js/config.js"></script>
   <script>
-    const serviceID = "{{EMAILJS_SERVICE_ID}}";
-    const templateID = "{{EMAILJS_TEMPLATE_ID}}";
-
     document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll(".clickable-image");
-    const fullscreenContainer = document.getElementById("fullscreen-container");
-    const fullscreenImage = document.getElementById("fullscreen-image");
-
-    images.forEach(image => {
+      // Example: handling clickable images
+      const images = document.querySelectorAll(".clickable-image");
+      const fullscreenContainer = document.getElementById("fullscreen-container");
+      const fullscreenImage = document.getElementById("fullscreen-image");
+  
+      images.forEach(image => {
         image.addEventListener("click", function () {
-            fullscreenImage.src = this.src;
-            fullscreenContainer.classList.remove("hidden");
+          fullscreenImage.src = this.src;
+          fullscreenContainer.classList.remove("hidden");
         });
-    });
-
-    fullscreenContainer.addEventListener("click", function () {
+      });
+  
+      fullscreenContainer.addEventListener("click", function () {
         fullscreenContainer.classList.add("hidden");
-    });
-});
-
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      });
+  
+      document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
         
-        const serviceID = serviceID;
-        const templateID = templateID ;
-        
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(response => {
-                document.getElementById("response-message").textContent = "Message sent successfully!";
-                document.getElementById("contact-form").reset();
-            }, error => {
-                document.getElementById("response-message").textContent = "Failed to send message. Try again later.";
-            });
-        });
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+          .then(response => {
+            document.getElementById("response-message").textContent = "Message sent successfully!";
+            document.getElementById("contact-form").reset();
+          }, error => {
+            document.getElementById("response-message").textContent = "Failed to send message. Try again later.";
+          });
+      });
+    });
   </script>
-  </body>
+    </body>
 </html>

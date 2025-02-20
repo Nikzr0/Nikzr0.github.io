@@ -16,12 +16,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Inject EmailJS secrets
+      # Create config.js dynamically
+      - name: Create config.js
         run: |
-          echo "EMAILJS_SERVICE_ID=${{ secrets.EMAILJS_SERVICE_ID }}" >> $GITHUB_ENV
-          echo "EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }}" >> $GITHUB_ENV
-          echo "EMAILJS_PUBLIC_KEY=${{ secrets.EMAILJS_PUBLIC_KEY }}" >> $GITHUB_ENV
-          
+          echo "const EMAILJS_PUBLIC_KEY = '${{ secrets.EMAILJS_PUBLIC_KEY }}';" > assets/js/config.js
+          echo "const EMAILJS_SERVICE_ID = '${{ secrets.EMAILJS_SERVICE_ID }}';" >> assets/js/config.js
+          echo "const EMAILJS_TEMPLATE_ID = '${{ secrets.EMAILJS_TEMPLATE_ID }}';" >> assets/js/config.js
+
       - name: Replace secrets in HTML file
         run: |
           sed -i 's/{{EMAILJS_PUBLIC_KEY}}/${{ secrets.EMAILJS_PUBLIC_KEY }}/g' index.html
@@ -32,7 +33,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v40
         with:
           branch: main
-          folder: .
+          folder: . 
