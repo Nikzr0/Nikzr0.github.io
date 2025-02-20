@@ -1,0 +1,16 @@
+# Ignore local config with sensitive data
+assets/js/config.js
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore build directories
+dist/
+build/
+
+# Ignore log files
+*.log
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
