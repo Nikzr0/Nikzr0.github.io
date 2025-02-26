@@ -562,7 +562,9 @@
 
 <!-- Load EmailJS script first -->
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script src="assets/js/config.js"></script>
+  <!-- <script src="assets/js/config.js"></script> -->
+  <script type="module" src="assets/js/config.js"></script>
+
 
   <script type="module">
     import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from './assets/js/config.js';
@@ -601,7 +603,7 @@
             contactForm.reset();
           })
           .catch(error => {
-            responseMessage.textContent = "Failed to send message. Try again later.";
+            responseMessage.textContent = "Неуспешно изпращане. Опитайте отново по-късно.";
             responseMessage.style.color = "red";
           });
       });
