@@ -16,24 +16,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Create config.js dynamically
+      # Create config.js dynamically with proper export statements
       - name: Create config.js
         run: |
-          echo "const EMAILJS_PUBLIC_KEY = '${{ secrets.EMAILJS_PUBLIC_KEY }}';" > assets/js/config.js
-          echo "const EMAILJS_SERVICE_ID = '${{ secrets.EMAILJS_SERVICE_ID }}';" >> assets/js/config.js
-          echo "const EMAILJS_TEMPLATE_ID = '${{ secrets.EMAILJS_TEMPLATE_ID }}';" >> assets/js/config.js
-
-      - name: Replace secrets in HTML file
-        run: |
-          sed -i 's/{{EMAILJS_PUBLIC_KEY}}/${{ secrets.EMAILJS_PUBLIC_KEY }}/g' index.html
-          sed -i 's/{{EMAILJS_SERVICE_ID}}/${{ secrets.EMAILJS_SERVICE_ID }}/g' index.html
-          sed -i 's/{{EMAILJS_TEMPLATE_ID}}/${{ secrets.EMAILJS_TEMPLATE_ID }}/g' index.html
+          echo "export const EMAILJS_PUBLIC_KEY = '${{ secrets.EMAILJS_PUBLIC_KEY }}';" > assets/js/config.js
+          echo "export const EMAILJS_SERVICE_ID = '${{ secrets.EMAILJS_SERVICE_ID }}';" >> assets/js/config.js
+          echo "export const EMAILJS_TEMPLATE_ID = '${{ secrets.EMAILJS_TEMPLATE_ID }}';" >> assets/js/config.js
 
       - name: Build project
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v40
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main
-          folder: . 
+          branch: main  
+          folder: .  # Deploy the entire project
