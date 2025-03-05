@@ -22,135 +22,167 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
-    <style>
-      /* === CAROUSEL IMAGE STYLING (Unclicked State) === */
-      #multiItemCarousel .carousel-item img {
-        width: 100%;
-        height: 400px;              /* Fixed height for consistent carousel display */
-        object-fit: cover;          /* Crops the image to fill the container */
-        border-radius: 10px;
-        border: 2px solid #ddd;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-    
-      /* Hover effect (optional) */
-      #multiItemCarousel .carousel-item img:hover {
-        transform: scale(1.02);
-      }
-    
-      /* Responsive adjustments for carousel images */
-      @media (max-width: 768px) {
-        #multiItemCarousel .carousel-item img {
-          height: 250px;
-        }
-      }
-    
-      @media (max-width: 576px) {
-        #multiItemCarousel .carousel-item img {
-          height: 200px;
-        }
-      }
+  <style>
+    #multiItemCarousel .carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+}
 
-      .left-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* This ensures the image covers the area without stretching */
-      }
+#multiItemCarousel .carousel-item img:hover {
+    transform: scale(1.02);
+}
 
-    
-      /* === GALLERY IMAGE STYLING (if used separately) === */
-      .image-gallery {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-      }
-    
-      .clickable-image {
-        width: 250px;
+@media (max-width: 768px) {
+    #multiItemCarousel .carousel-item img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    #multiItemCarousel .carousel-item img {
         height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
-      }
-    
-      .clickable-image:hover {
-        transform: scale(1.05);
-      }
-    
-      /* === FULLSCREEN LIGHTBOX STYLING (Clicked State) === */
-      #fullscreen-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-        transition: opacity 0.3s ease-in-out;
-      }
-    
-      #fullscreen-container.hidden {
-        display: none;
-      }
-    
-      #fullscreen-image {
-        /* No fixed height/width so the image keeps its natural aspect ratio */
-        width: auto;
-        height: auto;
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 15px;
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-        transition: transform 0.3s ease-in-out;
-      }
-    
-      /* === RESPONSIVE TEXT STYLING === */
-      .main-banner .owl-carousel .item .header-text h2 {
-        font-size: 3rem;  /* Default size */
-        line-height: 1.2;
-      }
-    
-      .main-banner .owl-carousel .item .header-text .category {
-        font-size: 1.5rem;  /* Default size */
-        line-height: 1.2;
-      }
-    
-      /* Adjusting text size for smaller screens */
-      @media (max-width: 1024px) {
-        .main-banner .owl-carousel .item .header-text h2 {
-          font-size: 2.5rem;  /* Slightly smaller text */
-        }
-    
-        .main-banner .owl-carousel .item .header-text .category {
-          font-size: 1.2rem;  /* Slightly smaller category text */
-        }
-      }
-    
-      @media (max-width: 768px) {
-        .main-banner .owl-carousel .item .header-text h2 {
-          font-size: 2rem;  /* Even smaller text on smaller devices */
-        }
-    
-        .main-banner .owl-carousel .item .header-text .category {
-          font-size: 1rem;  /* Smaller category text */
-        }
-      }
-    
-      @media (max-width: 576px) {
-        .main-banner .owl-carousel .item .header-text h2 {
-          font-size: 1.6rem;  /* Reduced text size for mobile */
-        }
-    
-        .main-banner .owl-carousel .item .header-text .category {
-          font-size: 0.9rem;  /* Reduced category text */
-        }
-      }
-    </style>
+    }
+}
+
+.left-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.clickable-image {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.clickable-image:hover {
+    transform: scale(1.05);
+}
+
+#fullscreen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#fullscreen-container.hidden {
+    display: none;
+}
+
+.header-text h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: white;
+}
+
+#fullscreen-image {
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    box-shadow: none;
+    transition: transform 0.3s ease-in-out;
+    border: none;
+    outline: none;
+}
+
+.main-banner .owl-carousel .item .header-text h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.main-banner .owl-carousel .item .header-text .category {
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+@media (max-width: 1024px) {
+    .main-banner .owl-carousel .item .header-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .main-banner .owl-carousel .item .header-text .category {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-banner .owl-carousel .item .header-text h2 {
+        font-size: 2rem;
+    }
+
+    .main-banner .owl-carousel .item .header-text .category {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-banner .owl-carousel .item .header-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .main-banner .owl-carousel .item .header-text .category {
+        font-size: 0.9rem;
+    }
+}
+
+.container, .row, .col-lg-* {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.video-frame, .video-thumbnail {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+  </style>
   </head>
 <body>
 
@@ -174,6 +206,7 @@
                         <h1 style="white-space: nowrap;">Villa Nedelya</h1>
                     </a>
                     <ul class="nav">
+                        <li><a href="info.html">Информация</a></li> <!-- Added link to Информация -->
                         <li><a href="#contact-us"><i class="fa fa-calendar"></i> Записване за посещение</a></li>
                     </ul>   
 
@@ -186,24 +219,25 @@
     </div>
 </header>
 
+
   <div class="main-banner">
     <div class="owl-carousel owl-banner">
       <div class="item item-1">
         <div class="header-text">
           <span class="category">Слатина, <em>България</em></span>
-          <h2>Побързай!<br>Ще ме резервират</h2>
+          <h3>Усещане за свобода, свеж въздух и вдъхновение</h3>
         </div>
       </div>
       <div class="item item-2">
         <div class="header-text">
-          <span class="category">Melbourne, <em>Australia</em></span>
-          <h2>Be Quick!<br>Get the best villa in town</h2>
+          <!-- <span class="category">Вила , <em>Неделя</em></span> -->
+          <h3>Усетите тишината, спокойствието и уюта на Балкана!</h3>
         </div>
       </div>
       <div class="item item-3">
         <div class="header-text">
-          <span class="category">Miami, <em>South Florida</em></span>
-          <h2>Act Now!<br>Get the highest level penthouse</h2>
+          <!-- <span class="category">Miami, <em>South Florida</em></span> -->
+          <h3>Бъдете наши гости в село Слатина!</h3>
         </div>
       </div>
     </div>
@@ -220,41 +254,43 @@
         <div class="col-lg-5">
           <div class="section-heading">
             <h6>| Характеристики</h6>
-            <h2>Best Appartment &amp; Sea view</h2>
+            <br>
+            <h5>Уют и комфорт сред природата</h5>
           </div>
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Best useful links ?
+                  Жилищно пространство
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                Get <strong>the best villa</strong> website template in HTML CSS and Bootstrap for your business. TemplateMo provides you the <a href="https://www.google.com/search?q=best+free+css+templates" target="_blank">best free CSS templates</a> in the world. Please tell your friends about it.</div>
+                  <strong>Вила „Неделя“</strong> разполага с два етажа: просторна всекидневна с напълно оборудвана кухня, трапезария за 10 души, разтегателен диван и тоалетна на първия етаж, както и уютни спални със собствени санитарни възли на втория етаж. Капацитетът е 8-10 души.
+                </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  How does this work ?
+                  Допълнителни удобства
                 </button>
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Вилата предлага външна барбекю зона, просторен двор с невероятна гледка към Стара планина и автентичен кладенец с чиста, студена вода. Наличен е паркинг за гости.
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Why is Villa Agency the best ?
+                  Локация и история
                 </button>
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Разположена в с. Слатина, Карлово, вилата е заобиколена от Средна гора и Стара планина. Селото е описано от Иван Вазов в романа <em>"Под игото"</em>, глава <em>"Тлака в Алтъново"</em>, пресъздавайки местния бит и традиции.
                 </div>
               </div>
             </div>
@@ -265,19 +301,19 @@
             <ul>
               <li>
                 <img src="assets/images/info-icon-01.png" alt="" style="max-width: 52px;">
-                <h4>250 m2<br><span>Total Flat Space</span></h4>
+                <h4>160 м²<br><span>Общо жилищно пространство</span></h4>
               </li>
               <li>
                 <img src="assets/images/info-icon-02.png" alt="" style="max-width: 52px;">
-                <h4>Contract<br><span>Contract Ready</span></h4>
+                <h4>Капацитет<br><span>8-10 души</span></h4>
               </li>
               <li>
                 <img src="assets/images/info-icon-03.png" alt="" style="max-width: 52px;">
-                <h4>Payment<br><span>Payment Process</span></h4>
+                <h4>Удобства<br><span>Барбекю, двор, паркинг</span></h4>
               </li>
               <li>
                 <img src="assets/images/info-icon-04.png" alt="" style="max-width: 52px;">
-                <h4>Safety<br><span>24/7 Under Control</span></h4>
+                <h4>Локация<br><span>Слатина, Карлово</span></h4>
               </li>
             </ul>
           </div>
@@ -285,6 +321,7 @@
       </div>
     </div>
   </div>
+  
 
 <!-- Img slider -->
 <div class="container my-5">
@@ -367,31 +404,33 @@
 <div id="fullscreen-container" class="hidden">
   <img id="fullscreen-image" src="" alt="Full View">
 </div>
-  <div class="video section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 offset-lg-4">
-          <div class="section-heading text-center">
-            <h6>| Видое</h6>
-            <h2>Get Closer View & Different Feeling</h2>
-          </div>
+<div class="video section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 offset-lg-4">
+        <div class="section-heading text-center">
+          <h6>| Видое</h6>
+          <h2 style="color: white; font-size: 24px; font-weight: bold; margin: 0; padding: 10px 0;">
+            Почувствай <span style="text-transform: lowercase;">атмосферата отблизо</span>
+          </h2>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="video-content">
-    <div class="container">
+<div class="video-content">
+  <div class="container">
       <div class="row">
-        <div class="col-lg-10 offset-lg-1">
-          <div class="video-frame">
-            <img src="assets/images/video-frame.jpg" alt="">
-            <a href="https://www.youtube.com/watch?v=LgQxzYQP4as" target="_blank"><i class="fa fa-play"></i></a>
+          <div class="col-lg-10 offset-lg-1 text-center">
+              <div class="video-frame" style="width: 50%; margin: 0 auto; overflow: hidden;">
+                  <img src="assets/images/villa/villa_living_room_img4.jpg" class="video-thumbnail img-fluid w-100" style="object-fit: cover; border-radius: 5px; transform: translateZ(0);">
+                  <a href="https://www.youtube.com/watch?v=LgQxzYQP4as" target="_blank"><i class="fa fa-play"></i></a>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
   </div>
+</div>
 
   <div class="fun-facts">
     <div class="container">
@@ -533,10 +572,21 @@
           
           <div class="col-lg-4 col-md-4 text-lg-right text-center">
             <ul class="social-links list-unstyled m-0">
-              <li class="d-inline-block mr-3"><a href="https://www.facebook.com/profile.php?id=100088433028747" style="color: #000;"><i class="fab fa-facebook"></i></a></li>
-              <li class="d-inline-block mr-3"><a href="https://x.com/minthu" target="_blank" style="color: #000;"><i class="fab fa-twitter"></i></a></li>
-              <li class="d-inline-block mr-3"><a href="#" style="color: #000;"><i class="fab fa-linkedin"></i></a></li>
-              <li class="d-inline-block"><a href="#" style="color: #000;"><i class="fab fa-instagram"></i></a></li>
+              <li class="d-inline-block mr-3">
+                <a href="https://www.facebook.com/groups/1178947939937426/" target="_blank" rel="noopener noreferrer" style="color: #000;">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+              <li class="d-inline-block mr-3">
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" style="color: #000;">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </li>
+              <li class="d-inline-block mr-3">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=villanedelya@gmail.com&su=Запитване%20за%20резервация&body=Здравейте,%0D%0A%0D%0AБих%20искал/а%20да%20направя%20запитване%20за%20следните%20дати:%0D%0A%0D%0AНачална%20дата:%20[Добавете%20начална%20дата]%0D%0AКрайна%20дата:%20[Добавете%20крайна%20дата]%0D%0A%0D%0AБрой%20възрастни:%20[Посочете%20брой%20възрастни]%0D%0AБрой%20деца:%20[Посочете%20брой%20деца]%0D%0A%0D%0AМоля,%20информирайте%20ме%20за%20наличността,%20условията%20и%20ценате.%0D%0A%0D%0AОчаквам%20вашия%20отговор.%0D%0A%0D%0AБлагодаря%20предварително!%0D%0A%0D%0AАко%20е%20удобно,%20може%20да%20се%20свържете%20с%20мен%20на:%0D%0A[Вашият%20телефон]" target="_blank" style="color: #000;">
+                  <i class="fas fa-envelope"></i>
+                </a>                      
+              </li>
             </ul>
           </div>
         </div>
@@ -593,20 +643,29 @@
       const responseMessage = document.getElementById("response-message");
 
       contactForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm, EMAILJS_PUBLIC_KEY)
-          .then(response => {
-            responseMessage.textContent = "Вашето запитване беше успешно изпратено!";
-            responseMessage.style.color = "green";
-            contactForm.reset();
-          })
-          .catch(error => {
-            responseMessage.textContent = "Неуспешно изпращане. Опитайте отново по-късно.";
-            responseMessage.style.color = "red";
-          });
-      });
+      event.preventDefault();
+  
+      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm, EMAILJS_PUBLIC_KEY)
+        .then(response => {
+          responseMessage.textContent = "Вашето запитване беше успешно изпратено!";
+          responseMessage.style.color = "green";
+          responseMessage.style.display = "block";
+          contactForm.reset();
+          
+          setTimeout(() => {
+            responseMessage.style.display = "none";
+          }, 5000);
+        })
+        .catch(error => {
+          responseMessage.textContent = "Неуспешно изпращане. Опитайте отново по-късно.";
+          responseMessage.style.color = "red";
+          responseMessage.style.display = "block";
+          setTimeout(() => {
+            responseMessage.style.display = "none";
+          }, 5000);
+        });
     });
+  });
   </script>
     </body>
 </html>
