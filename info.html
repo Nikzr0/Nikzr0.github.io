@@ -4,277 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
     <title>Villa Nedelya</title>
-
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-    <!-- MDB CSS (Material Design for Bootstrap) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-villa-agency.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-
-    <!-- Custom Styles from the first HTML file -->
-<head>
-    <style>
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fafafa;
-    margin: 0;
-    padding: 0;
-}
-
-h1, h2, h3 {
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.container {
-    padding: 20px 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.section-title {
-    color: #007bff;
-    margin-bottom: 20px;
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-
-.photo-placeholder {
-    background-color: #e9ecef;
-    height: 250px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6c757d;
-    font-size: 1.2rem;
-}
-
-/* Footer Style */
-footer, .simple-footer {
-    background-color: #f8f9fa;
-    text-align: center;
-    font-size: 14px;
-    border-top: 1px solid #ddd;
-    margin-top: 0px;
-}
-
-/* Social Links in Footer */
-footer .social-links {
-    list-style: none;
-    padding: 0;
-    margin: -10;
-}
-
-footer .social-links li {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-footer .social-links li a {
-    font-size: 18px;
-    color: #000;
-    text-decoration: none;
-}
-
-footer .social-links li a:hover {
-    color: #007bff;
-}
-
-/* Table Styles */
-.table {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
-}
-
-.table th {
-    background-color: #007bff;
-    color: white;
-    font-weight: normal;
-}
-
-.table td, .table th {
-    padding: 20px;
-    text-align: center;
-}
-
-/* Multi-Item Carousel Styles */
-#multiItemCarousel .carousel-item img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: none;
-    box-shadow: none;
-}
-
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    width: 100%;
-}
-
-.main-nav .logo {
-    flex-shrink: 0;
-}
-
-.main-nav .logo h1 {
-    font-size: 2rem;
-    color: #007bff;
-    font-weight: bold;
-    margin: 0;
-    white-space: nowrap;
-}
-
-.main-nav .nav {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.main-nav .nav li {
-    list-style-type: none;
-    margin-left: 20px;
-}
-
-.main-nav .nav li a {
-    color: #333;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
-}
-
-.main-nav .nav li a:hover {
-    color: #007bff;
-}
-
-.menu-trigger {
-    display: none;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .menu-trigger {
-        display: block;
-        margin-top: 10px;
-    }
-
-    .main-nav .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 10px;
-    }
-
-    .main-nav .nav li {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-}
-
-/* Simplified Footer Styles */
-.simple-footer {
-    background-color: #f8f9fa;
-    padding: 20px 0;
-    position: relative; /* Use relative positioning here */
-    width: 100%;
-    text-align: center;
-    z-index: 100;
-    margin: 0;
-    bottom: 0;
-}
-
-/* Footer Specific Adjustments */
-.simple-footer .container {
-    padding: 0;
-}
-
-.simple-footer .social-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.simple-footer .social-links li {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.simple-footer .social-links li a {
-    color: #000;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.simple-footer .social-links li a:hover {
-    color: #007bff;
-}
-
-.simple-footer p {
-    font-size: 14px;
-    margin-top: 10px;
-    color: #000;
-}
-
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-nav {
-                flex-direction: column; /* Stack the logo and nav items on smaller screens */
-                align-items: flex-start;
-            }
-    
-            .menu-trigger {
-                display: block; /* Show the menu trigger on mobile */
-                margin-top: 10px;
-            }
-    
-            .main-nav .nav {
-                flex-direction: column; /* Stack nav items vertically */
-                align-items: flex-start; /* Align items to the left */
-                margin-top: 10px;
-            }
-    
-            .main-nav .nav li {
-                margin-left: 0;
-                margin-bottom: 10px; /* Adds space between items on mobile */
-            }
-        }
-    </style>
-    
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/info.css">
 </head>
 
 <body>
@@ -286,10 +26,13 @@ footer .social-links li a:hover {
                         <a href="index.html" class="logo">
                             <h1 style="white-space: nowrap;">Villa Nedelya</h1>
                         </a>
-                        <a href="index.html" class="nav-link">
-                            <i class="fa fa-home"></i> Начално меню
-                        </a>
-    
+                        <ul class="nav" style="margin-left: auto; padding-right: 20px; padding-top: 20px; display: flex; align-items: center;">
+                            <li>
+                                <a href="index.html">
+                                    <i class="fa fa-home"></i> Начално меню
+                                </a>
+                            </li>
+                        </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
@@ -299,41 +42,65 @@ footer .social-links li a:hover {
         </div>
     </header>
     
-
     <br>
     <div class="container">
-        <h1 class="text-center">Вила „Неделя” - Описание</h1>
+        <h1 class="text-center">Вила „Неделя”</h1>
         <div class="row">
-            <div class="col-12">
-                <div class="photo-placeholder">[Главна снимка на вилата]</div>
+            <div class="col-md-6">
+                <div class="photo-placeholder">
+                    <img src="assets/images/villa/outdoor_img_1.jpg" alt="Кухнята">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="photo-placeholder">
+                    <img src="assets/images/villa/villa_front_img.jpg" alt="Трапезарията">
+                </div>
             </div>
         </div>
 
-        <h2 class="section-title">Вила „Неделя”</h2>
         <p>Вила „Неделя” – релакс, спокойствие, хармония в сърцето на Балкана. Насладете се на тишината, свежия въздух и прекрасната гледка към Стара планина и Арката на свободата.</p>
 
         <h3 class="section-title">Общо жилищно пространство</h3>
-        <p>Вилата разполага с две етажа, които предлагат уют и комфорт за всички гости:</p>
+        <p>Вилата разполага с два етажа, които предлагат уют и комфорт за всички гости:</p>
         <ul>
-            <li>1 етаж: просторна кухня с всички необходими уреди, трапезария с голяма маса и разтегателен диван, тоалетна.</li>
-            <li>2 етаж: уютни спални с удобни матраци и самостоятелни санитарни възли.</li>
+            <li><strong>1 етаж:</strong> Просторна кухня с всички необходими уреди, трапезария с голяма маса и разтегателен диван, тоалетна. Кухнята е напълно оборудвана с готварска печка, котлони за готвене, микровълнова фурна, абсорбатор, мивка, кафе машина, хладилник с фризер, съдове и прибори за хранене.</li>
+            <li><strong>2 етаж:</strong> Уютни, комфортни и спокойни спални помещения за отдих и почивка. Стаите са обзаведени със спални с удобни матраци, спално бельо с олекотени завивки, хавлиени кърпи и място за багаж. Капацитетът на къщата е от 8 до 10 човека, в зависимост от компанията.</li>
         </ul>
-
+        <br>
         <div class="row">
             <div class="col-md-6">
-                <div class="photo-placeholder">[Снимка на кухнята]</div>
+                <div class="photo-placeholder">
+                    <img src="assets/images/villa/villa_living_room_img3.jpg" alt="Кухнята">
+                </div>
             </div>
             <div class="col-md-6">
-                <div class="photo-placeholder">[Снимка на трапезарията]</div>
+                <div class="photo-placeholder">
+                    <img src="assets/images/villa/villa_guestroom_img3.jpg" alt="Трапезарията">
+                </div>
             </div>
         </div>
-
+        
         <h3 class="section-title">Двор и Барбекю</h3>
-        <p>Просторен двор на две нива с автентичен кладенец и барбекю. Насладете се на изгледа към Стара планина и опитайте вкусна храна на скарата.</p>
-        <div class="photo-placeholder">[Снимка на двора]</div>
-
+        <p>Просторен двор на две нива с автентичен кладенец и барбекю. Насладете се на изгледа към Стара планина и опитайте вкусна храна на скарата. Дворът е идеален за игри, забавления и разходки. Пред къщата се открива необятен простор с чудесна гледка към Стара планина и Арката на свободата. На разположение са външна чешма, барбекю на дървени въглища и електрическа скара. Има и места за паркиране на автомобили.</p>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="photo-placeholder">
+                    <img src="assets/images/villa/outdoor_img_1.jpg" alt="Двор">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="photo-placeholder">
+                    <img src="assets/images/villa/villa_BBQ.jpg" alt="Барбекю">
+                </div>
+            </div>
+        </div>
+        
         <h3 class="section-title">Локация</h3>
-        <p>Вила „Неделя” се намира в село Слатина, на 25 км от Карлово и на 79 км от Пловдив. Лесно достъпно място с чудесен изглед и спокойна атмосфера.</p>
+        <p>Вила „Неделя” се намира в село Слатина, общ. Карлово, обл. Пловдив. Разположена е в началото на селото, на лесно и достъпно място. До вилата води главният асфалтиран път. Селото е скътано в пазвите на северните склонове на Същинска Средна гора, добре защитено от силните и студени ветрове, спускащи се от връх Вежен на Стария Балкан. Селото се намира на 25 км северозападно от гр. Карлово и на 79 км северозападно от гр. Пловдив. Живописно обградено от Средна гора, Стара планина и река Стряма.</p>
+
+        <h3 class="section-title">История на село Слатина</h3>
+        <p>Село Слатина е добре известно в българската литература. Животът и битът в селото са описани от Иван Вазов в романа "Под игото" - глава "Тлака в Алтъново". Ще усетите дивата мелодия на планините, тишината на горските долини, шушненето на сенките, горския миризлив босилек, планинските екове и примирането на любовната въздишка в долините. Близък приятел на Иван Вазов бил поп Недялко - учител в еднокласното училище в Алтъново. Той му разказвал случки от живота в селото, които Вазов използва в романа си.</p>
 
         <br>
         <h3 class="section-title">Цени</h3>
@@ -364,49 +131,124 @@ footer .social-links li a:hover {
             </tbody>
         </table>
 
-        
         <br>
         <h3 class="section-title">Забележителности в района</h3>
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <div class="photo-placeholder">[Снимка на Троянския проход]</div>
+                    <div class="photo-placeholder">
+                        <img src="assets/images/landmarks/The Trojan Passjpeg.jpeg" alt="Троянския проход">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">Троянския проход</h5>
-                        <p class="card-text">Най-високият проход в Стара планина.</p>
+                        <p class="card-text">Най-високият проход в Стара планина. Дължината на прохода е 40,8 km, а надморската височина на седловината Беклемето е 1525,5 m. Проходът свързва долината на река Бели Осъм на север с Карловската котловина при село Кърнаре на юг.</p>
                     </div>
                 </div>
             </div>
+        
             <div class="col-md-4">
                 <div class="card">
-                    <div class="photo-placeholder">[Снимка на Арката на свободата]</div>
+                    <div class="photo-placeholder">
+                        <img src="assets/images/landmarks/The Arch of Liberty.jpeg" alt="Арката на свободата">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">Арката на свободата</h5>
-                        <p class="card-text">Паметник на руските освободители.</p>
+                        <p class="card-text">Паметник на руските освободители. Разположена е на връх Горалтепе (1595 m), на 15 минути ход източно от най-високата точка на Троянския проход. Арката е посветена на руските и съветските войски, участвали в освобождението на България.</p>
                     </div>
                 </div>
             </div>
+        
             <div class="col-md-4">
                 <div class="card">
-                    <div class="photo-placeholder">[Снимка на Карлово]</div>
+                    <div class="photo-placeholder">
+                        <img src="assets/images/landmarks/Karlovo.jpeg" alt="Карлово">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">Град Карлово</h5>
-                        <p class="card-text">Историческо и културно наследство.</p>
+                        <p class="card-text">Исторически и културен център. Градът е известен с рожденика си Васил Левски, както и с красивата си природа и архитектура.</p>
                     </div>
                 </div>
             </div>
         </div>
-
+        
         <br>
-        <h3 class="section-title">Пътеки около вилата</h3>
+        
         <div class="row">
-            <div class="col-md-6">
-                <div class="photo-placeholder">[Снимка на пътека 1]</div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="photo-placeholder">
+                        <img src="assets/images/landmarks/Goat Wall Hut.webp" alt="Хижа Козя стена">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Хижа Козя стена</h5>
+                        <p class="card-text">Разположена на 2 часа и 15 минути преход западно от Троянския проход. Хижата е идеална за почивка след дълъг преход и предлага прекрасни гледки към Стара планина.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <div class="photo-placeholder">[Снимка на пътека 2]</div>
+        
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="photo-placeholder">
+                        <img src="assets/images/landmarks/Beklemeto Resourt.webp" alt="Курорт Беклемето">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Курорт Беклемето</h5>
+                        <p class="card-text">Намира се на северния склон на Троянска планина. Курортът разполага с хотели, писти за алпийски ски и отлична писта за ски-бягане и биатлон.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="photo-placeholder">
+                        <img src="assets/images/landmarks/Asenovska Kale.jpg" alt="Аневско Кале">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Аневско Кале</h5>
+                        <p class="card-text">Средновековна крепост, разположена на висок хълм. Тя е известна с богатата си история и стратегическото си положение, от което се открива панорамна гледка към региона.</p>
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <br>
+        <h3 class="section-title">Пътеки около вилата</h3>
+        <p>Вила „Неделя” е идеална отправна точка за любителите на природата и пешеходните преходи. Село Слатина е обградено от красиви гори, реки и планински пътеки, които предлагат незабравими изживявания. Ето някои от най-популярните маршрути:</p>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="photo-placeholder">
+                    <img src="assets/images/landmarks/Asenovska Kale.jpg" alt="Пътека до Арката на свободата">
+                </div>
+                <h5 class="card-title">Пътека до Арката на свободата</h5>
+                <p class="card-text">Започва от вилата и води до връх Горалтепе, където се намира паметникът Арка на свободата. Преходът е с умерена трудност и отнема около 1 час и 30 минути. По пътя ще се насладите на панорамни гледки към Стара планина и Карловската котловина.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="photo-placeholder">
+                    <img src="assets/images/paths/River Striama Path.jpg" alt="Пътека до река Стряма">
+                </div>
+                <h5 class="card-title">Пътека до река Стряма</h5>
+                <p class="card-text">Лека и приятна разходка, която води до бреговете на река Стряма. Подходяща е за семейства с деца и отнема около 45 минути. По пътя ще срещнете красиви поляни и горски кътчета.</p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="photo-placeholder">
+                    <img src="assets/images/paths/Trojan Path.jpg" alt="Пътека към Троянския проход">
+                </div>
+                <h5 class="card-title">Пътека към Троянския проход</h5>
+                <p class="card-text">За по-опитните туристи, този маршрут води до най-високата точка на Троянския проход – седловината Беклемето. Преходът е с продължителност около 3 часа и предлага впечатляващи гледки към планината.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="photo-placeholder">
+                    <img src="assets/images/paths/Kozya Stena Hut.jpg" alt="Пътека до хижа Козя стена">
+                </div>
+                <h5 class="card-title">Пътека до хижа Козя стена</h5>
+                <p class="card-text">За любителите на по-дълги преходи, този маршрут води до хижа Козя стена, разположена на 2 часа и 15 минути от вилата. По пътя ще преминете през гъсти букови гори и живописни долини.</p>
+            </div>
+        </div>
+        <br>      
 
     <footer>
         <div class="sub-header" style="background-color: #f8f9fa;">
@@ -442,8 +284,7 @@ footer .social-links li a:hover {
           </div>
         </div>
       </footer>
-    
-    
+ 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
