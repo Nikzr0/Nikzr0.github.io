@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/info.css">
 </head>
-
 <body>
     <header class="header-area header-sticky">
         <div class="container">
@@ -26,13 +25,11 @@
                         <a href="index.html" class="logo">
                             <h1 style="white-space: nowrap;">Villa Nedelya</h1>
                         </a>
-                        <ul class="nav" style="margin-left: auto; padding-right: 20px; padding-top: 20px; display: flex; align-items: center;">
-                            <li>
-                                <a href="index.html">
-                                    <i class="fa fa-home"></i> Начално меню
-                                </a>
-                            </li>
-                        </ul>
+                        <ul class="nav">
+                            <li><a href="index.html">Начало</a></li>
+                            <li><a href="index.html#contact-us"><i class="fa fa-calendar"></i> Записване за посещение</a></li>
+                        </ul>   
+
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
@@ -289,6 +286,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
 
     <!-- Custom JS for Mobile Menu -->
     <script>
@@ -296,5 +296,7 @@
             document.querySelector('.nav').classList.toggle('active');
         });
     </script>
+
+</body>
 </body>
 </html>

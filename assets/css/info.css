@@ -29,12 +29,6 @@ h1, h2, h3 {
     text-align: center;
 }
 
-.container {
-    padding: 20px 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 p {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -115,30 +109,13 @@ footer .social-links li a:hover {
     text-align: center;
 }
 
-#multiItemCarousel .carousel-item img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: none;
-    box-shadow: none;
-}
-
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    width: 100%;
-}
-
-.main-nav .logo h1 {
+/* .main-nav .logo h1 {
     font-size: 2rem;
     color: #007bff;
     font-weight: bold;
     margin: 0;
     white-space: nowrap;
-}
+} */
 
 .simple-footer {
     background-color: #f8f9fa;
@@ -237,3 +214,4 @@ footer .social-links li a:hover {
         display: none;
     }
 }
+
