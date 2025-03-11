@@ -73,11 +73,17 @@ footer .social-links {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 footer .social-links li {
     display: inline-block;
     margin-right: 15px;
+}
+
+footer .social-links li:last-child {
+    margin-right: 0;
 }
 
 footer .social-links li a {
@@ -128,11 +134,17 @@ footer .social-links li a:hover {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .simple-footer .social-links li {
     display: inline-block;
     margin-right: 15px;
+}
+
+.simple-footer .social-links li:last-child {
+    margin-right: 0;
 }
 
 .simple-footer .social-links li a {
@@ -172,6 +184,20 @@ footer .social-links li a:hover {
         margin-left: 0;
         margin-bottom: 10px;
     }
+
+    footer .sub-header {
+        padding: 20px 0;
+    }
+
+    footer .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    footer .social-links li {
+        margin: 10px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -182,6 +208,15 @@ footer .social-links li a:hover {
     .main-nav .nav li {
         margin-left: 0;
         margin-bottom: 8px;
+    }
+
+    footer .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .social-links li {
+        margin: 5px 0;
     }
 }
 
