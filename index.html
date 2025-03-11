@@ -438,18 +438,23 @@
     </div>
   </footer>
 
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/counter.js"></script>
-  <script src="assets/js/custom.js"></script>
+<!-- EmailJS script -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-<!-- Load EmailJS script first -->
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <!-- <script src="assets/js/config.js"></script> -->
-  <script type="module" src="assets/js/config.js"></script>
+<!-- jQuery & Bootstrap -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
+<!-- Dependencies -->
+<script src="assets/js/isotope.min.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/counter.js"></script>
+
+<!-- EmailJS config -->
+<script type="module" src="assets/js/config.js"></script>
+
+<!-- Custom scripts -->
+<script src="assets/js/custom.js"></script>
 
   <script type="module">
     import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from './assets/js/config.js';
