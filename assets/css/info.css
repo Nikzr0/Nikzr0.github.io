@@ -109,14 +109,6 @@ footer .social-links li a:hover {
     text-align: center;
 }
 
-/* .main-nav .logo h1 {
-    font-size: 2rem;
-    color: #007bff;
-    font-weight: bold;
-    margin: 0;
-    white-space: nowrap;
-} */
-
 .simple-footer {
     background-color: #f8f9fa;
     padding: 20px 0;
@@ -214,4 +206,3 @@ footer .social-links li a:hover {
         display: none;
     }
 }
-
